@@ -1,0 +1,13 @@
+# Python virtual environment - never commit this, it is rebuilt from requirements.txt
+venv/
+.venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Editor and OS clutter
+.vscode/
+.DS_Store
+Thumbs.db
