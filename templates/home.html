@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to BrewSite</h1>
+    <p class="lead">A guide to the craft breweries of Las Cruces, New Mexico.</p>
+</section>
+
+<!-- Student additions: three embedded pictures, each paired with extra information -->
+<section class="feature-grid">
+
+    <article class="feature">
+        <img src="{{ url_for('static', filename='images/home1.jpg') }}"
+             alt="Picture 1 added by Abraham Ortega">
+        <h2>About this project</h2>
+        <p>
+            BrewSite is a Flask web application I built for ICT 362 at New
+            Mexico State University. Flask handles the routes, and Jinja
+            templates fill in the pages so every page shares the same header,
+            navigation, and footer from one base template.
+        </p>
+    </article>
+
+    <article class="feature">
+        <img src="{{ url_for('static', filename='images/home2.jpg') }}"
+             alt="Picture 2 added by Abraham Ortega">
+        <h2>Why Las Cruces?</h2>
+        <p>
+            Las Cruces sits in the Mesilla Valley along the Rio Grande, with
+            the Organ Mountains on the east side of town. It has a small but
+            growing brewery scene, and the Breweries page lists local spots
+            pulled from a public brewery directory.
+        </p>
+    </article>
+
+    <article class="feature">
+        <img src="{{ url_for('static', filename='images/home3.jpg') }}"
+             alt="Picture 3 added by Abraham Ortega">
+        <h2>How the code is managed</h2>
+        <p>
+            The project lives on GitHub with three branches. New work starts
+            on <strong>development</strong>, gets merged into
+            <strong>staging</strong> for testing, and only finished, tested
+            code is merged into <strong>production</strong>.
+        </p>
+    </article>
+
+</section>
+
+<p class="cta">
+    <a class="button" href="{{ url_for('brewery') }}">See the breweries &rarr;</a>
+</p>
+{% endblock %}

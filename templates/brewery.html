@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1>Las Cruces Breweries</h1>
+    <p class="lead">{{ breweries | length }} breweries in Las Cruces, New Mexico.</p>
+</section>
+
+<section class="brewery-list">
+    {# One card per brewery dictionary passed in from app.py #}
+    {% for b in breweries %}
+    <article class="brewery-card">
+        <h2>{{ b.name }}</h2>
+        <span class="badge">{{ b.type }}</span>
+        <p class="address">
+            {{ b.address }}<br>
+            {{ b.city }}, {{ b.state }} {{ b.zip }}
+        </p>
+        <p class="phone">{{ b.phone }}</p>
+        {% if b.website %}
+        <a href="{{ b.website }}" target="_blank" rel="noopener">Visit website</a>
+        {% endif %}
+    </article>
+    {% else %}
+    <p>No breweries found.</p>
+    {% endfor %}
+</section>
+
+<p class="source">
+    Brewery data from <a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.name }}</a>,
+    retrieved {{ source.retrieved }}. Call ahead to confirm hours.
+</p>
+{% endblock %}
